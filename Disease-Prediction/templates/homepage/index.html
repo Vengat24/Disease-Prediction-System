@@ -1,0 +1,332 @@
+﻿
+{% extends "basic.html" %}
+{% load static %}
+
+ 
+	{% block head %}
+
+
+{% endblock %}
+
+
+
+
+{% block body %}
+
+
+    
+<div class="jumbotron" style="background-color: rgba(0, 0, 0, 0.5);text-align: justify;">
+    <h1 class="display-4" style="color: #f90698" >Take charge of your own health...</h1>
+    <p class="lead"  style="color: #ffffff;">
+      There may have been numerous occasions when you or someone close to you needed immediate medical assistance, but a doctor wasn't available due to various reasons. The Disease Prediction system is designed to provide end-user support and online consultation. In this proposal, we introduce a web application that enables users to receive instant guidance regarding their health conditions through an intelligent system. The application is equipped with a database of various details and the diseases associated with them.
+      
+      Users can share their health concerns through the application, which then processes the specific details to identify potential illnesses associated with them. Intelligent data mining techniques are employed to make accurate predictions about the likely illness based on the user's information. Following the results, the patient can then contact a doctor for further treatment as needed.
+    
+                
+  
+     {% if user.is_authenticated %}
+
+     
+     {% else %}
+
+      <p class="lead">
+      <button type="button" class="btn btn-primary btn-lg"  style="background-color: #f90698" data-toggle="modal" data-target=".bd-example-modal-lg">Register Now</button>
+      </p>
+    
+
+</div>
+<div class="container mt-5 mb-3" style="width:fit-content;">
+      <center>
+        <h1 style="color: #f90698" >Sign-In As</h1>
+        </center>
+        <center>
+      
+      <form>
+          <div class="container mt-5 mb-5">
+       <div class="row">
+          <div class="col" style="background-color: rgba(250, 250, 250); border-radius: 20px; border: 3px solid black; margin-right: 30px;">
+             <a href="{% url 'sign_in_admin' %}">
+      <img  alt="admin" src="{% static 'homepage/admin2.png' %}"  class="img">
+      
+      </a>
+      <h5 style="color: #f90698">Admin</h5>
+          </div>
+      
+          <div class="col" style="background-color: rgb(255, 255, 255); border-radius: 20px; border: 3px solid black;margin-right: 30px;">
+      <a href="{% url 'sign_in_doctor' %}">
+      <img  alt="doctor" src="{% static 'homepage/doc2.png' %}"  class="img">
+      
+      </a>
+      <h5 style="color: #f90698">Doctor</h5>
+          </div>
+      
+          <div class="col" style="background-color: rgb(255, 255, 255); border-radius: 20px; border: 3px solid black;margin-right: 30px;">
+      <a href="{% url 'sign_in_patient' %}">
+      <img  alt="patient" src="{% static 'homepage/patient2.png' %}"  class="img">
+      
+      </a>
+      <h5 style="color: #f90698">Patient</h5>
+          </div>
+        </div>
+        </div>
+      </form>
+      </center>
+</div>
+
+
+    
+
+    {% endif %}
+
+<br><br>
+
+
+
+
+<!-- Large modal -->
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+   
+<center>
+  <h1 style="color: #f90698" >Sign-In  As</h1>
+  </center>
+<br><br>
+
+<center>
+  <form>
+    <div class="container mt-5 mb-5">
+ <div class="row">
+    <div class="col" style="background-color: rgba(250, 250, 250); border-radius: 20px; border: 3px solid black; margin-right: 30px;">
+       <a href="{% url 'sign_in_admin' %}">
+<img  alt="admin" src="{% static 'homepage/admin2.png' %}"  class="img">
+
+</a>
+<h5 style="color: #f90698">Admin</h5>
+    </div>
+
+    <div class="col" style="background-color: rgb(255, 255, 255); border-radius: 20px; border: 3px solid black;margin-right: 30px;">
+<a href="{% url 'sign_in_doctor' %}">
+<img  alt="doctor" src="{% static 'homepage/doc2.png' %}"  class="img">
+
+</a>
+<h5 style="color: #f90698">Doctor</h5>
+    </div>
+
+    <div class="col" style="background-color: rgb(255, 255, 255); border-radius: 20px; border: 3px solid black;margin-right: 30px;">
+<a href="{% url 'sign_in_patient' %}">
+<img  alt="patient" src="{% static 'homepage/patient2.png' %}"  class="img">
+
+</a>
+<h5 style="color: #f90698">Patient</h5>
+    </div>
+  </div>
+  </div>
+</form>
+</center>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!-- Large modal -->
+<div class="modal fade bd-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+   
+<center>
+  <h1>Sign-Up  As</h1>
+  </center>
+<br><br>
+
+<center>
+<form>
+    <div class="container mt-5 mb-5 ml-5 mr-5">
+ <div class="row">
+
+    <div class="col" style="background-color: rgb(255, 255, 255); border-radius: 20px; border: 3px solid black;margin-right: 210px;">
+<a href="{% url 'signup_doctor' %}">
+<img  alt="doctor" src="{% static 'homepage/doc2.png' %}"  class="img">
+</a>
+<h5 style="color: #f90698">Doctor</h5>
+    </div>
+
+    <div class="col" style="background-color: rgb(255, 255, 255); border-radius: 20px; border: 3px solid black;margin-right: 80px;margin-left: 30px;">
+<a href="{% url 'signup_patient' %}">
+<img  alt="patient" src="{% static 'homepage/patient2.png' %}"  class="img">
+</a>
+<h5 style="color: #f90698">Patient</h5>
+    </div>
+  </div>
+  </div>
+</form>
+</center>
+
+    </div>
+  </div>
+</div>
+
+<!-- 
+<div class="modal fade bd-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+   
+<center>
+  <h1 style="color: #f90698" >Sign-Up </h1>
+  </center>
+<br><br>
+
+<center>
+  <form>
+    <div class="container mt-5 mb-5">
+ <div class="row">
+    <div class="col" style="background-color: rgba(250, 250, 250); border-radius: 20px; border: 3px solid black; margin-right: 30px;">
+       <a href="{% url 'sign_in_admin' %}">
+<img  alt="admin" src="{% static 'homepage/admin2.png' %}"  class="img">
+
+</a>
+<h5 style="color: #f90698">Admin</h5>
+    </div>
+
+    <div class="col" style="background-color: rgb(255, 255, 255); border-radius: 20px; border: 3px solid black;margin-right: 30px;">
+<a href="{% url 'sign_in_doctor' %}">
+<img  alt="doctor" src="{% static 'homepage/doc2.png' %}"  class="img">
+
+</a>
+<h5 style="color: #f90698">Doctor</h5>
+    </div>
+
+    <div class="col" style="background-color: rgb(255, 255, 255); border-radius: 20px; border: 3px solid black;margin-right: 30px;">
+<a href="{% url 'sign_in_patient' %}">
+<img  alt="patient" src="{% static 'homepage/patient2.png' %}"  class="img">
+
+</a>
+<h5 style="color: #f90698">Patient</h5>
+    </div>
+  </div>
+  </div>
+</form>
+</center>
+
+    </div>
+  </div>
+</div>
+
+ -->
+
+
+
+<br><br><br><br>
+<div class ="doc" style="background-color: rgba(233, 236, 239, 0.1);">
+<center><h2 style="color: #f90698">Our Doctors</h2></center>
+<div class="row mt-5 mb-5" >
+  <div class="col">
+    <div class="card" style="background-color: rgba(0, 0, 0, 0.5); border-radius: 20px; border: 3px solid black; margin-left: 10px;">
+        <div class="card-body text-center">
+            <h5 class="card-title "  style="color: #ffffff;">DR. VIJAYABALAN</h5>
+            <img  alt="admin" src="{% static 'homepage/vijay.jfif' %}" width="200" height="250" class="rounded" style=" border: 2px solid black;">
+            <p class="card-text" style="color: #ffffff;">KCG COLLEGE OF TECHNOLOGY, KCG Nagar, Rajiv Gandhi Salai, Karapakkam, Chennai – 600 097. Tamil Nadu. India..</p>
+            
+        </div>
+    </div>
+</div>
+    <div class="col" >
+        <div class="card" style="background-color: rgba(0, 0, 0, 0.5);   border-radius: 20px; border: 3px solid rgb(0, 0, 0); margin-left: 10px;">
+            <div class="card-body text-center">
+                <h5 class="card-title" style="color: #ffffff;" >Dr. VENKADESH  </h5>
+                <img  alt="admin" src="{% static 'homepage/venky.jfif' %}" width="200" height="250"class="rounded" style=" border: 2px solid rgb(0, 0, 0);">
+                <p class="card-text" style="color: #ffffff;">KCG COLLEGE OF TECHNOLOGY, KCG Nagar, Rajiv Gandhi Salai, Karapakkam, Chennai – 600 097. Tamil Nadu. India..</p>
+                
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card" style="background-color: rgba(0, 0, 0, 0.5);  border-radius: 20px; border: 3px solid black; margin-left: 10px;">
+            <div class="card-body text-center">
+                <h5 class="card-title"  style="color: #ffffff;">Dr. VENGATESH   </h5>
+                <img  alt="admin" src="{% static 'homepage\vengat.jpg' %}" width="200" height="250" class="rounded" style=" border: 2px solid black; ">
+                <p class="card-text"  style="color: #ffffff;">KCG COLLEGE OF TECHNOLOGY, KCG Nagar, Rajiv Gandhi Salai, Karapakkam, Chennai – 600 097. Tamil Nadu. India..</p>
+                
+            </div>
+        </div>
+    </div>
+    <div class="col">
+      <div class="card" style="background-color: rgba(0, 0, 0, 0.5);   border-radius: 20px; border: 3px solid rgb(12, 10, 12); margin-left: 10px; margin-right: 10px;">
+          <div class="card-body text-center">
+              <h5 class="card-title"  style="color: #ffffff;"> Dr. NISHANTH </h5>
+              <img  alt="admin" src="{% static 'homepage\nishanth.jpg' %}" width="200" height="250" class="rounded" style=" border: 2px solid black;">
+              <p class="card-text" style="color: #ffffff;" >KCG COLLEGE OF TECHNOLOGY, KCG Nagar, Rajiv Gandhi Salai, Karapakkam, Chennai – 600 097. Tamil Nadu. India..</p>
+              
+          </div>
+      </div>
+  </div>
+</div>
+  
+
+<br><br><br><br>
+
+</div>    
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="footer" class="card bg-dark text-white">
+  <div class="card-body" style="color: rgb(255, 255, 255);">
+    Contact-<br>
+    <ul>
+      <li>
+        <h5 class="mb-1" style="color: rgb(255, 255, 255);">Email: <span style="color:  rgb(255, 124, 238);">vengatsrini2410@gmail.com</span></h5>
+      </li>
+      <li>
+        <h5 class="mb-1" style="color: rgb(255, 255, 255);">Contact no: <span style="color: rgb(255, 124, 238);">9087366333</span></h5>
+      </li>
+      <li>
+        <h5 class="mb-1" style="color: rgb(255, 255, 255);">Address: <span style="color: rgb(255, 124, 238);">Chennai, Tamil Nadu.</span></h5>
+        <div class="footer-copyright text-center">© 2024 Copyright:
+          <a href="#"> VitalVue.com</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+  
+ 
+
+
+
+
+
+</div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+    
+
+
+
+
+    
+{% endblock %}
